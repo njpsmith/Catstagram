@@ -5,6 +5,9 @@
 h1, h2, h3, p {
   color: #262626;
 }
+h1 {
+  text-align: center;
+}
 body {
   background-color: #FAFAFA;
 }
@@ -39,12 +42,18 @@ body {
   color: #61dafb;
 }
 
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 26px;
+}
 
-.feed {
+.inner-container {
   max-width: 700px;
   width: 100%;
   margin: 0 auto;
-  padding: 30px 15px;
+  padding: 0 30px 15px;
+  margin-top: 30px;
+  text-align: left;
 }
 .feed__spinner-wrapper {
   display: flex;
@@ -67,9 +76,17 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.header__inner a {
+  text-decoration: none;
+  color: #262626;
+}
 .navbar button {
   margin-left: 12px;
 }
+.navbar a {
+  text-decoration: none;
+}
+
 
 .feed-item {
   overflow: hidden; 
@@ -87,6 +104,24 @@ body {
   text-align: right;
   padding: 10px 12px 7px 10px;
 }
+
+.about-page {
+  background-color: #fff;
+  padding-top: 30px;
+}
+
+hr {
+  border-top: 0;
+}
+p {
+  line-height: 1.45;
+}
+p a {
+  /*color: #262626;*/
+  color: #ED4956;
+  font-weight: bold;
+}
+
 
 
 @media all and (max-width: 600px) {

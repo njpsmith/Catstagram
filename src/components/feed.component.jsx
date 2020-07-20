@@ -6,7 +6,8 @@ import FeedItem from './feed-item.component';
 class Feed extends React.Component {
 	state = {
 		catData: [],
-		loading: false
+		loading: false,
+		error: null
 	}
 
 
@@ -19,13 +20,14 @@ class Feed extends React.Component {
      	.then(data => {
       	setTimeout( () => { this.setState({ loading: false }) }, 1000 )
      	})
+      .catch(error => this.setState({ error, isLoading: false }));
 	}
 
 
 
 	render() {
 		return (
-			<div className="feed">
+			<div className="feed inner-container">
 				<Pane>
 					{this.state.loading ? <div className="feed__spinner-wrapper"><Spinner marginX="auto" marginY="auto" /></div> : null}
 

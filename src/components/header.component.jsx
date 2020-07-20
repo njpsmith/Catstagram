@@ -1,18 +1,30 @@
 import React from 'react';
-import { Button, SearchIcon } from 'evergreen-ui';
+import { Button } from 'evergreen-ui';
+import {
+  Link
+} from "react-router-dom";
+import { SearchInput } from 'evergreen-ui';
 
 
 const Header = () => {
 	return (
 		<div className="header">
 			<div className="header__inner">	
-				<div className="logo">CATSTAGRAM</div>
+				<Link to="/">
+					<div className="logo">Catstagram</div>
+				</Link>
 
-				<div className="searchbar">Searchbar <SearchIcon color="#262626" /></div>
+				<div className="searchbar">
+					<SearchInput placeholder="Search" />
+				</div>
 
 				<div className="navbar">
-					<Button appearance="primary">ABOUT</Button>
-					<Button appearance="primary">FAVOURITES</Button>
+					<Link to="/about">
+						<Button appearance="primary">ABOUT</Button>
+					</Link>
+					<Link to="/favourites">
+						<Button appearance="primary">FAVOURITES</Button>
+					</Link>
 				</div>
 			</div>
 		</div>
