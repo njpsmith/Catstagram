@@ -31,6 +31,11 @@ export const fetchCatsFailure = error => ({
   payload: { error }
 });
 
+export const getFavouriteCatsFromLocalStorageAction = (favouriteCats) => ({
+  type: "GET_FAVOURITE_CATS_FROM_LOCAL_STORAGE", 
+  payload: favouriteCats // cats from localStorage
+})
+
 
 export const fetchCats = () => {
   return dispatch => {
@@ -45,5 +50,19 @@ export const fetchCats = () => {
   };
 }
 
+
+export const getFavouriteCatsFromLocalStorage = () => {
+  return dispatch => {
+    let favouriteCats = localStorage.getItem('favouriteCats');
+    if(favouriteCats == null || !favouriteCats.length) {
+      favouriteCats = [];
+    } else {
+      // Convert into an array (from a string)
+      favouriteCats = JSON.parse(favouriteCats);
+    }
+
+    dispatch(getFavouriteCatsFromLocalStorageAction(favouriteCats));
+  }
+}
 
 

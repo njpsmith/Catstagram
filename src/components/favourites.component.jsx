@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import FeedItem from './feed-item.component';
 
 const Favourites = (props) => {
@@ -7,7 +8,13 @@ const Favourites = (props) => {
 		<div className="favourites-page inner-container">
 			<h2>Favourite cat photos</h2>
 
-			{ !props.likedCats.length ? "You have no favourite cats! Please like some!" : (
+			{ !props.likedCats.length ? (
+				<p>
+					You have no favourite cats! Please like some 
+					{" "}
+					<Link to="/">here</Link>!
+				</p>
+				) : (
 				<div>
 					<p>Click image(s) to remove from list of favourites.</p>
 					<div className="favourite-grid">

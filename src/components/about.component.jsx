@@ -9,7 +9,7 @@ const About = () => {
 			</p>
 
 			<p>
-				This is a demo/personal project that uses React.js, Redux, React Router and TheCatApi.com.
+				This is a demo/personal project that uses React.js, Redux, React Router, localStorage (to save favourite cats) and TheCatApi.com. No cats were harmed in the making of this web app.
 			</p>
 
 

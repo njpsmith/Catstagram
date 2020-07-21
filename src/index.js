@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 import allReducers from './reducers';
 import { Provider } from 'react-redux';
 
-import { fetchCats } from './actions';
+import { fetchCats, getFavouriteCatsFromLocalStorage } from './actions';
 
 
 const store = createStore(
@@ -18,6 +18,7 @@ const store = createStore(
 );
 
 store.dispatch(fetchCats());
+store.dispatch(getFavouriteCatsFromLocalStorage());
 
 
 ReactDOM.render(

@@ -53,11 +53,46 @@ class FeedItem extends React.Component {
 		if(isPhotoLiked) {
 		  this.props.dispatch({ type: "REMOVE_LIKE_ON_PHOTO", payload: imgURL });
 		  this.removeFromFavouritesNotification();
+		  this.removeFromLocalStorage(imgURL);
 		} else {
 			this.props.dispatch({ type: "LIKE_PHOTO", payload: imgURL });
 			this.addToFavouritesNotification();
+			this.addToLocalStorage();
 		}
 	};
+
+	getCurrentLocalStorageCatsArray = () => {
+		// Get current localStorage
+		let favouriteCats = localStorage.getItem('favouriteCats');
+		if(favouriteCats == null || !favouriteCats.length) {
+			favouriteCats = [];
+		} else {
+			// Convert into an array (from a string)
+			favouriteCats = JSON.parse(favouriteCats);
+		}
+		return favouriteCats;
+	}
+
+	addToLocalStorage = () => {
+		let favouriteCats = this.getCurrentLocalStorageCatsArray();
+
+		// Add new item to the end
+		favouriteCats.push(this.props.imgURL);
+
+		// Change array to string again and save in localStorage
+		localStorage.setItem('favouriteCats', JSON.stringify(favouriteCats));
+	}
+
+	removeFromLocalStorage = () => {
+		let favouriteCats = this.getCurrentLocalStorageCatsArray();
+
+		// Remove item from the array
+		favouriteCats = favouriteCats.filter(e => e !== this.props.imgURL)
+
+		// Change array to string again and save in localStorage
+		localStorage.setItem('favouriteCats', JSON.stringify(favouriteCats));
+	}
+
 
 	render() {
 		return (

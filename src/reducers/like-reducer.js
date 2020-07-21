@@ -70,6 +70,14 @@ const likeReducer = (state = initialState, action) => {
 				}
 			}
 
+		case "GET_FAVOURITE_CATS_FROM_LOCAL_STORAGE":
+			return {
+				...state, 
+				currentUser: {
+					likedCats: action.payload
+				}
+			}
+
 		default:
 			return state;
 	}

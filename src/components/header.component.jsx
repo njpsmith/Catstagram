@@ -1,9 +1,7 @@
 import React from 'react';
-import { Button } from 'evergreen-ui';
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SearchInput } from 'evergreen-ui';
+import Navbar from './navbar.component';
 
 
 const Header = () => {
@@ -18,14 +16,7 @@ const Header = () => {
 					<SearchInput placeholder="Search" />
 				</div>
 
-				<div className="navbar">
-					<Link to="/about">
-						<Button appearance="primary">ABOUT</Button>
-					</Link>
-					<Link to="/favourites">
-						<Button appearance="primary">FAVOURITES</Button>
-					</Link>
-				</div>
+				<Navbar />
 			</div>
 		</div>
 	);

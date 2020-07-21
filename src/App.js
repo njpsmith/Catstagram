@@ -20,6 +20,7 @@ import Favourites from './components/favourites.component';
 
 // https://cdn2.thecatapi.com/images/26u.jpg
 // https://cdn2.thecatapi.com/images/bbr.jpg
+// https://cdn2.thecatapi.com/images/343.gif
 
 
 function App() {
