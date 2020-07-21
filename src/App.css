@@ -12,35 +12,7 @@ body {
   background-color: #FAFAFA;
 }
 
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  /*background-color: #282c34;*/
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 .logo {
   font-family: 'Pacifico', cursive;
@@ -122,6 +94,25 @@ p a {
   font-weight: bold;
 }
 
+.favourite-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 10px;
+}
+.favourite-grid .feed-item {
+  margin-bottom: 0;
+}
+
+.feed-item__footer svg {
+  fill: #667889a6 !important;
+  cursor: pointer;
+}
+.feed-item__footer svg.filled {
+  fill: rgb(237, 73, 86) !important;
+}
+
+
+
 
 
 @media all and (max-width: 600px) {
@@ -130,6 +121,10 @@ p a {
   }
   .searchbar {
     display: none;
+  }
+  .inner-container {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
