@@ -11,8 +11,8 @@ const Header = () => {
 		<div className="header">
 			<div className="header__inner">	
 				<Link to="/">
-					<div className="logo">Instapussy</div>
-					{/*<div className="logo">Catstagram</div>*/}
+					{/*<div className="logo">Instapussy</div>*/}
+					<div className="logo">Catstagram</div>
 				</Link>
 
 				<div className="searchbar">

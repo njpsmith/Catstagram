@@ -4,11 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import allReducers from './reducers';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 
-const store = createStore(allReducers);
+import { fetchCats } from './actions';
+
+
+const store = createStore(
+	allReducers,
+	applyMiddleware(thunk)
+);
+
+store.dispatch(fetchCats());
 
 
 ReactDOM.render(

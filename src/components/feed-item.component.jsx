@@ -57,7 +57,6 @@ class FeedItem extends React.Component {
 				</div>
 
 			  <div className="feed-item__footer">
-			  	{/*<HeartIcon className="filled" />*/}
 			  	<HeartIcon onClick={this.toggleLikeOnPhoto} className={this.state.imageIsLiked ? "filled" : ""}  />
 			  </div>
 			</Card>

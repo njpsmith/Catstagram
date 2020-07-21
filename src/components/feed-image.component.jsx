@@ -16,12 +16,12 @@ class FeedImage extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<img 
+			<div className="feed-image-background" style={{backgroundImage: `url(${this.props.imgURL})`}}>
+				{/*<img 
 					src={this.props.imgURL} 
 					onLoad={this.handleImageLoaded.bind(this)}
 	        onError={this.handleImageErrored.bind(this)}
-				/>
+				/>*/}
 			</div>
 		);
 	}
