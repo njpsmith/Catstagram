@@ -63,6 +63,7 @@ body {
 .feed-item {
   overflow: hidden; 
   /*margin-bottom: 60px;*/
+  cursor: pointer;
 }
 .feed-item img {
   width: 100%;
@@ -116,15 +117,66 @@ p a {
   fill: #667889a6 !important;
   cursor: pointer;
 }
-.feed-item__footer svg.filled {
-  fill: rgb(237, 73, 86) !important;
-}
 .feed-layout {
   grid-template-columns: 1fr 1fr;
   display: grid;
   gap: 30px 15px;
 }
 
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.heart-button.filled {
+  animation-duration: .45s;
+  animation-name: like-button-animation;
+  animation-timing-function: ease-in-out;
+  transform: scale(1);
+  fill: rgb(237, 73, 86) !important;
+}
+.heart-button.un-filled {
+  animation-duration: .45s;
+  animation-name: like-button-animation-unlike;
+  animation-timing-function: ease-in-out;
+  transform: scale(1);
+}
+@keyframes like-button-animation {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2); 
+  }
+  50% {
+    transform: scale(0.95);
+  }
+}
+@keyframes like-button-animation-unlike {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2); 
+  }
+  50% {
+    transform: scale(0.95);
+  }
+}
 
 
 

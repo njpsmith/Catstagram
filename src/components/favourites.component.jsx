@@ -6,14 +6,17 @@ const Favourites = (props) => {
 	return (
 		<div className="favourites-page inner-container">
 			<h2>Favourite cat photos</h2>
-			
+
 			{ !props.likedCats.length ? "You have no favourite cats! Please like some!" : (
-				<div className="favourite-grid">
-					{
-						props.likedCats.map((cat) => (
-							<FeedItem key={cat} imgURL={cat} />
-						))
-					}
+				<div>
+					<p>Click image(s) to remove from list of favourites.</p>
+					<div className="favourite-grid">
+						{
+							props.likedCats.map((cat) => (
+								<FeedItem key={cat} imgURL={cat} />
+							))
+						}
+					</div>
 				</div>
 			) }
 			

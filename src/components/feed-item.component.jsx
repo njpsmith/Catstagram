@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, HeartIcon } from 'evergreen-ui';
+import { Card, HeartIcon, toaster } from 'evergreen-ui';
 import { connect } from 'react-redux';
 import FeedImage from './feed-image.component';
 
@@ -11,6 +11,24 @@ class FeedItem extends React.Component {
 
 	componentDidMount() {
 		this.checkIfCatisLiked();
+	}
+
+	addToFavouritesNotification = () => {
+		toaster.success(
+      'Added to your favourites!', {
+	      id: 'unique',
+	      duration: 1
+	    }
+    )
+	}
+
+	removeFromFavouritesNotification = () => {
+		toaster.notify(
+      'Removed from your favourites :(', {
+	      id: 'unique',
+	      duration: 1
+	    }
+    )
 	}
 
 	checkIfCatisLiked = () => {
@@ -32,13 +50,12 @@ class FeedItem extends React.Component {
 		const isPhotoLiked = this.state.imageIsLiked;
 		const imgURL = this.props.imgURL;
 		this.toggleHeartFill();
-		// console.log('toggling like to', isPhotoLiked);
 		if(isPhotoLiked) {
-			// console.log('REMOVE_LIKE_ON_PHOTO - payload', this.props.imgURL);
 		  this.props.dispatch({ type: "REMOVE_LIKE_ON_PHOTO", payload: imgURL });
+		  this.removeFromFavouritesNotification();
 		} else {
-			// console.log('adding to liked list');
 			this.props.dispatch({ type: "LIKE_PHOTO", payload: imgURL });
+			this.addToFavouritesNotification();
 		}
 	};
 
@@ -51,13 +68,14 @@ class FeedItem extends React.Component {
 			  background="#ffffff"
 			  borderRadius="3px"
 			  width="100%"
+			  onClick={this.toggleLikeOnPhoto}
 			>
 				<div className="feed-item__img-wrapper">
 					<FeedImage imgURL={this.props.imgURL} />
 				</div>
 
 			  <div className="feed-item__footer">
-			  	<HeartIcon onClick={this.toggleLikeOnPhoto} className={this.state.imageIsLiked ? "filled" : ""}  />
+			  	<HeartIcon className={this.state.imageIsLiked ? "heart-button filled" : "heart-button un-filled"}  />
 			  </div>
 			</Card>
 		);
@@ -69,7 +87,6 @@ const mapStateToProps = (state) => ({
 	likedCats: state.likeReducer.currentUser.likedCats
 })
 
-// export default connect(null, mapDispatchToProps)(FeedItem);
 export default connect(mapStateToProps)(FeedItem);
 
 

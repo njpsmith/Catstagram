@@ -38,7 +38,7 @@ export const fetchCats = () => {
     return fetch("https://api.thecatapi.com/v1/images/search?size=med&limit=20&api_key=31202f7f-1ccc-4a62-8b60-aa2c4d814867")
       .then(res => res.json())
       .then(json => {
-        setTimeout( () => { dispatch(fetchCatsSuccess(json)) }, 600 );
+        setTimeout( () => { dispatch(fetchCatsSuccess(json)) }, 600 ); //Added this timeout to show the spinner
         return json;
       })
       .catch(error => dispatch(fetchCatsFailure(error)));
