@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Navbar from './navbar.component';
-import Searchbar from './searchbar.component';
 
 
 const Header = () => {
@@ -12,7 +11,6 @@ const Header = () => {
 					<div className="logo">Catstagram</div>
 				</Link>
 
-				<Searchbar />
 				<Navbar />
 			</div>
 		</div>

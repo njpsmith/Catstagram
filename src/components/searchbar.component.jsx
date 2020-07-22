@@ -12,9 +12,7 @@ class Searchbar extends React.Component {
 	}
 
 	componentDidMount() {
-		this.setState({ categoryDataStringified: JSON.parse(JSON.stringify(catCategoryData)) }, 
-			() => { console.log('catCategoryData', this.state.categoryDataStringified) }
-		);
+		this.setState({ categoryDataStringified: JSON.parse(JSON.stringify(catCategoryData)) });
 	}
 
 	handleInputChange = (event) => {
@@ -42,6 +40,7 @@ class Searchbar extends React.Component {
 
 		return (
 			<div className="searchbar">
+				<p>Search cats by breed: </p>
 				<Combobox
 				  openOnFocus
 				  height={40}
@@ -51,7 +50,7 @@ class Searchbar extends React.Component {
 						))
 				  }
 				  onChange={ selected => this.getBreedIDByName(selected) }
-				  placeholder="Search by breed"
+				  placeholder="All breeds"
 				/>
 			</div>
 		);
