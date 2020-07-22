@@ -16,6 +16,7 @@ export const unLikePhoto = (photoURL = "") => {
 export const FETCH_CATS_BEGIN   = 'FETCH_CATS_BEGIN';
 export const FETCH_CATS_SUCCESS = 'FETCH_CATS_SUCCESS';
 export const FETCH_CATS_FAILURE = 'FETCH_CATS_FAILURE';
+export const UPDATE_SELECTED_CAT_BREED = 'UPDATE_SELECTED_CAT_BREED';
 
 export const fetchCatsBegin = () => ({
   type: FETCH_CATS_BEGIN
@@ -37,10 +38,17 @@ export const getFavouriteCatsFromLocalStorageAction = (favouriteCats) => ({
 })
 
 
-export const fetchCats = () => {
+export const fetchCats = (selectedBreedID) => {
   return dispatch => {
+    let apiString = "https://api.thecatapi.com/v1/images/search?size=med&limit=20&api_key=31202f7f-1ccc-4a62-8b60-aa2c4d814867";
+
+    if(!!selectedBreedID) {
+      apiString = `https://api.thecatapi.com/v1/images/search?breed_id=${selectedBreedID}&size=med&limit=20&api_key=31202f7f-1ccc-4a62-8b60-aa2c4d814867`;
+      console.log('has search query', apiString);
+    } 
+
     dispatch(fetchCatsBegin());
-    return fetch("https://api.thecatapi.com/v1/images/search?size=med&limit=20&api_key=31202f7f-1ccc-4a62-8b60-aa2c4d814867")
+    return fetch(apiString)
       .then(res => res.json())
       .then(json => {
         setTimeout( () => { dispatch(fetchCatsSuccess(json)) }, 600 ); //Added this timeout to show the spinner
@@ -49,6 +57,15 @@ export const fetchCats = () => {
       .catch(error => dispatch(fetchCatsFailure(error)));
   };
 }
+
+
+export const updateSelectedCatBreed = (selectedBreedID) => {
+  return dispatch => {
+    console.log('updateSelectedCatBreed', selectedBreedID);
+    dispatch(fetchCats(selectedBreedID));
+  }
+};
+
 
 
 export const getFavouriteCatsFromLocalStorage = () => {

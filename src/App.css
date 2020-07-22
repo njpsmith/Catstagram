@@ -180,16 +180,24 @@ p a {
 
 
 
-@media all and (max-width: 600px) {
-  .feed-item {
-    margin-bottom: 15px;
-  }
+@media all and (max-width: 660px) {
   .searchbar {
     display: none;
+  }
+}
+@media all and (max-width: 600px) {
+  .header__inner {
+    padding: 12px 15px;
+  }
+  .feed-item {
+    margin-bottom: 15px;
   }
   .inner-container {
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .logo {
+    font-size: 20px;
   }
 }
 

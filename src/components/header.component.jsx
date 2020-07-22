@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { SearchInput } from 'evergreen-ui';
 import Navbar from './navbar.component';
+import Searchbar from './searchbar.component';
 
 
 const Header = () => {
@@ -12,10 +12,7 @@ const Header = () => {
 					<div className="logo">Catstagram</div>
 				</Link>
 
-				<div className="searchbar">
-					<SearchInput placeholder="Search" />
-				</div>
-
+				<Searchbar />
 				<Navbar />
 			</div>
 		</div>
