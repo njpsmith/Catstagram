@@ -1,22 +1,26 @@
-export const likePhoto = (photoURL = "") => {
-	return {
-		type: "LIKE_PHOTO", 
-		payload: photoURL
-	}
-}
-
-export const unLikePhoto = (photoURL = "") => {
-	return {
-		type: "REMOVE_LIKE_ON_PHOTO",
-		payload: photoURL
-	}
-}
-
-
+export const LIKE_PHOTO = 'LIKE_PHOTO';
+export const REMOVE_LIKE_ON_PHOTO = 'REMOVE_LIKE_ON_PHOTO';
 export const FETCH_CATS_BEGIN   = 'FETCH_CATS_BEGIN';
 export const FETCH_CATS_SUCCESS = 'FETCH_CATS_SUCCESS';
 export const FETCH_CATS_FAILURE = 'FETCH_CATS_FAILURE';
 export const UPDATE_SELECTED_CAT_BREED = 'UPDATE_SELECTED_CAT_BREED';
+export const GET_FAVOURITE_CATS_FROM_LOCAL_STORAGE = 'GET_FAVOURITE_CATS_FROM_LOCAL_STORAGE';
+
+
+export const likePhoto = (photoURL = "") => {
+  return {
+    type: "LIKE_PHOTO", 
+    payload: photoURL
+  }
+}
+
+export const unLikePhoto = (photoURL = "") => {
+  return {
+    type: REMOVE_LIKE_ON_PHOTO,
+    payload: photoURL
+  }
+}
+
 
 export const fetchCatsBegin = () => ({
   type: FETCH_CATS_BEGIN
@@ -33,7 +37,7 @@ export const fetchCatsFailure = error => ({
 });
 
 export const getFavouriteCatsFromLocalStorageAction = (favouriteCats) => ({
-  type: "GET_FAVOURITE_CATS_FROM_LOCAL_STORAGE", 
+  type: GET_FAVOURITE_CATS_FROM_LOCAL_STORAGE, 
   payload: favouriteCats // cats from localStorage
 })
 
@@ -61,7 +65,7 @@ export const fetchCats = (selectedBreedID) => {
 
 export const updateSelectedCatBreed = (selectedBreedID) => {
   return dispatch => {
-    console.log('updateSelectedCatBreed', selectedBreedID);
+    // console.log('updateSelectedCatBreed', selectedBreedID);
     dispatch(fetchCats(selectedBreedID));
   }
 };

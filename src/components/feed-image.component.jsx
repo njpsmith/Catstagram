@@ -1,9 +1,5 @@
 import React from 'react';
-// import React, { useState } from 'react';
-// import Fade from "./fade.component";
 
-
-// const FeedImage = (props) => {
 class FeedImage extends React.Component {
 	constructor(props) {
     super(props);
@@ -25,7 +21,6 @@ class FeedImage extends React.Component {
   //   this.setState({ imageStatus: "failed to load" });
   // }
 
-  // const [show, setShow] = useState(false);
 
 	render() {
 		return (

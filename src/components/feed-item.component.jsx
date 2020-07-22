@@ -31,6 +31,7 @@ class FeedItem extends React.Component {
     )
 	}
 
+
 	checkIfCatisLiked = () => {
 		const likedCatsArray = this.props.likedCats;
 
@@ -40,7 +41,7 @@ class FeedItem extends React.Component {
 		}
 	}
 
-	toggleHeartFill = () => {
+	toggleHeartFillAnimation = () => {
 		this.setState(prevState => ({ 
 			imageIsLiked: !prevState.imageIsLiked 
 		}));
@@ -49,7 +50,7 @@ class FeedItem extends React.Component {
 	toggleLikeOnPhoto = () => {
 		const isPhotoLiked = this.state.imageIsLiked;
 		const imgURL = this.props.imgURL;
-		this.toggleHeartFill();
+		this.toggleHeartFillAnimation();
 		if(isPhotoLiked) {
 		  this.props.dispatch({ type: "REMOVE_LIKE_ON_PHOTO", payload: imgURL });
 		  this.removeFromFavouritesNotification();
@@ -60,6 +61,7 @@ class FeedItem extends React.Component {
 			this.addToLocalStorage();
 		}
 	};
+	
 
 	getCurrentLocalStorageCatsArray = () => {
 		// Get current localStorage
