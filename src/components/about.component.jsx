@@ -12,6 +12,10 @@ const About = () => {
 				This is a demo/personal project that uses React.js, Redux, React Router, localStorage (to save favourite cats between sessions) and TheCatApi.com. No cats were harmed in the making of this web app.
 			</p>
 
+			<p>
+				You can find the code for this project on Github <a href="https://github.com/njpsmith/Catstagram" target="_blank">here</a>
+			</p>
+
 
 			<p>Find me on LinkedIn <a href="https://www.linkedin.com/in/nicholas-smith-97a90829/" target="_blank" rel="noopener noreferrer">here</a>
 			</p>

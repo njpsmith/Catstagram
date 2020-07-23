@@ -5,7 +5,15 @@ export const FETCH_CATS_SUCCESS = 'FETCH_CATS_SUCCESS';
 export const FETCH_CATS_FAILURE = 'FETCH_CATS_FAILURE';
 export const UPDATE_SELECTED_CAT_BREED = 'UPDATE_SELECTED_CAT_BREED';
 export const GET_FAVOURITE_CATS_FROM_LOCAL_STORAGE = 'GET_FAVOURITE_CATS_FROM_LOCAL_STORAGE';
+export const TOGGLE_DARK_MODE = 'TOGGLE_DARK_MODE';
 
+
+export const toggleDarkMode = (trueOrFalse) => {
+  return {
+    type: TOGGLE_DARK_MODE,
+    payload: trueOrFalse
+  }
+}
 
 export const likePhoto = (photoURL = "") => {
   return {

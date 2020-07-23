@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from 'evergreen-ui';
+import DarkModeToggle from './dark-mode-toggle.component';
+
 
 const Navbar = () => {
 	return (
@@ -10,7 +12,9 @@ const Navbar = () => {
 			</Link>
 			<Link to="/favourites">
 				<Button appearance="primary">Favourites</Button>
-			</Link>
+			</Link>			
+
+			<DarkModeToggle />
 		</div>
 	);
 }

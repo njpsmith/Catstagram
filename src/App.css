@@ -13,6 +13,9 @@ body {
 }
 
 
+.App {
+  min-height: 100vh;
+}
 
 .logo {
   font-family: 'Pacifico', cursive;
@@ -52,11 +55,22 @@ body {
   text-decoration: none;
   color: #262626;
 }
+.navbar {
+  display: flex;
+}
 .navbar button {
   margin-left: 12px;
 }
 .navbar a {
   text-decoration: none;
+}
+
+.dark-mode-toggle {
+  margin-left: 20px;
+  font-size: 15px;
+}
+.dark-mode-toggle label {
+  margin: 2px auto 0;
 }
 
 
@@ -185,6 +199,36 @@ p a {
 .searchbar p {
   margin-bottom: 6px;
 }
+
+
+/* Dark mode */
+.dark-mode-theme-enabled {
+
+}
+.App.dark-mode-theme-enabled {
+  /*background-color: #1a1a1b;*/
+  background-color: #2b2b2b;
+  /*background-color: #030303;*/
+}
+.dark-mode-theme-enabled .header {
+  background-color: #262626;
+  /*background-color: #1a1a1b;*/
+  color: #fff;
+  border-bottom-color: #343536;
+}
+.dark-mode-theme-enabled .header__inner a {
+  color: #fff;
+}
+.dark-mode-theme-enabled h1, 
+.dark-mode-theme-enabled h2, 
+.dark-mode-theme-enabled h3, 
+.dark-mode-theme-enabled p {
+  color: #D7DADC;
+}
+.dark-mode-theme-enabled .about-page {
+  background-color: transparent;
+}
+
 
 
 

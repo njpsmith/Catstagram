@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 
 import {
@@ -24,10 +25,10 @@ import Favourites from './components/favourites.component';
 // https://cdn2.thecatapi.com/images/MTc0MTAxNw.gif
 
 
-function App() {
+function App(props) {
   return (
     <Router>
-      <div className="App">
+      <div className={`App ${props.darkMode ? 'dark-mode-theme-enabled' : ''}`}>
         <Header />
        
         {/* A <Switch> looks through its children <Route>s and
@@ -49,4 +50,13 @@ function App() {
   );
 }
 
-export default App;
+
+const mapsStateToProps = (state) => ({
+  darkMode: state.darkModeReducer.darkMode 
+})
+
+export default connect(mapsStateToProps)(App);
+
+
+
+
