@@ -239,6 +239,9 @@ p a {
   }
 }
 @media all and (max-width: 600px) {
+  .dark-mode-toggle {
+    display: none;
+  }
   .header__inner {
     padding: 12px 15px;
   }
