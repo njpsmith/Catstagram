@@ -1,24 +1,26 @@
 import { TOGGLE_DARK_MODE } from '../actions';
 
-const initialState = {
-	darkMode: false
-}
+let darkModePreference = localStorage.getItem('darkModePreference');
+darkModePreference = JSON.parse(darkModePreference);
+const initialDarkModeState = !!darkModePreference ? darkModePreference : false;
 
+const initialState = {
+  darkMode: initialDarkModeState,
+};
 
 const darkModeReducer = (state = initialState, action) => {
-	console.log('reducer', state, action);
+  console.log('reducer', state, action);
 
-	switch(action.type) {
-		case TOGGLE_DARK_MODE:
+  switch (action.type) {
+    case TOGGLE_DARK_MODE:
       return {
         ...state,
-        darkMode: action.payload
+        darkMode: action.payload,
       };
 
-		default:
-			return state;
-	}
-}
+    default:
+      return state;
+  }
+};
 
 export default darkModeReducer;
-

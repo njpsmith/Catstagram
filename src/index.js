@@ -11,15 +11,10 @@ import { Provider } from 'react-redux';
 
 import { fetchCats, getFavouriteCatsFromLocalStorage } from './actions';
 
-
-const store = createStore(
-	allReducers,
-	applyMiddleware(thunk)
-);
+const store = createStore(allReducers, applyMiddleware(thunk));
 
 store.dispatch(fetchCats());
 store.dispatch(getFavouriteCatsFromLocalStorage());
-
 
 ReactDOM.render(
   <Provider store={store}>
