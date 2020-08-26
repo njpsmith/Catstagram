@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests DarkModeToggle after toggling 1`] = `ReactWrapper {}`;
+
+exports[`tests DarkModeToggle initially 1`] = `ReactWrapper {}`;

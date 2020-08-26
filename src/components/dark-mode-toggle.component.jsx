@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Switch } from 'evergreen-ui';
 import { toggleDarkMode } from '../actions';
 
-class DarkModeToggle extends React.Component {
+export class DarkModeToggle extends React.Component {
   onToggleDarkModeSwitch = (e) => {
     this.props.dispatch(toggleDarkMode(e));
     this.storeDarkModePreferenceInLocalStorage(e);
@@ -22,7 +22,9 @@ class DarkModeToggle extends React.Component {
       <div className="dark-mode-toggle">
         Dark mode?
         <Switch
+          id="dark-mode-toggle-switch"
           checked={this.props.darkModePreference}
+          // checked={true}
           onChange={(e) => this.onToggleDarkModeSwitch(e.target.checked)}
         />
       </div>
