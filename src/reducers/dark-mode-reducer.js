@@ -9,8 +9,6 @@ const initialState = {
 };
 
 const darkModeReducer = (state = initialState, action) => {
-  console.log('reducer', state, action);
-
   switch (action.type) {
     case TOGGLE_DARK_MODE:
       return {

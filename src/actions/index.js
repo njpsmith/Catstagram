@@ -55,7 +55,6 @@ export const fetchCats = (selectedBreedID) => {
 
     if (!!selectedBreedID) {
       apiString = `https://api.thecatapi.com/v1/images/search?breed_id=${selectedBreedID}&size=med&limit=20&api_key=31202f7f-1ccc-4a62-8b60-aa2c4d814867`;
-      console.log('has search query', apiString);
     }
 
     dispatch(fetchCatsBegin());
@@ -73,7 +72,6 @@ export const fetchCats = (selectedBreedID) => {
 
 export const updateSelectedCatBreed = (selectedBreedID) => {
   return (dispatch) => {
-    // console.log('updateSelectedCatBreed', selectedBreedID);
     dispatch(fetchCats(selectedBreedID));
   };
 };
