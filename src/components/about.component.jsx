@@ -93,11 +93,11 @@ const About = () => {
         </a>
         , <br />
         <a
-          href="https://wookiepedia.netlify.app"
+          href="https://jotto-app.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Wookiepedia
+          Jotto - a word guessing game
         </a>
       </p>
 
