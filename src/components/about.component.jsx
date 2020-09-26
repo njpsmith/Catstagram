@@ -71,6 +71,14 @@ const About = () => {
         </a>
         , <br />
         <a
+          href="https://pitchside.london/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Pitchside
+        </a>
+        , <br />
+        <a
           href="https://southplacehotel.com/"
           target="_blank"
           rel="noopener noreferrer"
